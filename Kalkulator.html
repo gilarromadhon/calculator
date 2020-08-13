@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kalkulator</title>
+    <script src = "https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+</head>
+<body>
+    <script type = "text/javascript">
+        function plus(){
+            var n1 = parseFloat(document.getElementById("n1").value)
+            var n2 = parseFloat(document.getElementById("n2").value)
+            var n3 = parseFloat(document.getElementById("n3").value)
+            document.getElementById('result').value = n1+n2+n3;
+        }
+        function minus(){
+            var n1 = parseFloat(document.getElementById("n1").value)
+            var n2 = parseFloat(document.getElementById("n2").value)
+            var n3 = parseFloat(document.getElementById("n3").value)
+            document.getElementById('result').value = n1-n2-n3;
+        }
+        function kali(){
+            var n1 = parseFloat(document.getElementById("n1").value)
+            var n2 = parseFloat(document.getElementById("n2").value)
+            var n3 = parseFloat(document.getElementById("n3").value)
+            document.getElementById('result').value = n1*n2*n3;
+        }
+        function bagi(){
+            var n1 = parseFloat(document.getElementById("n1").value)
+            var n2 = parseFloat(document.getElementById("n2").value)
+            var n3 = parseFloat(document.getElementById("n3").value)
+            document.getElementById('result').value = n1/n2/n3;
+        }
+
+        $(document).ready(function() { 
+            $("#check1").click(function() {
+                $("#n1").attr('disabled', !$("#n1").attr('disabled'));
+                $("#n1").val(0)
+            }); 
+            $("#check2").click(function() {
+                $("#n2").attr('disabled', !$("#n3").attr('disabled'));
+                $("#n2").val(0)
+            }); 
+            $("#check3").click(function() {
+                $("#n3").attr('disabled', !$("#n3").attr('disabled'));
+                $("#n3").val(0)
+            }); 
+        }); 
+    </script>
+    <h1>
+        Calculator
+    </h1>
+        <input type ="text" id ="n1" placeholder="0" disabled="disabled">
+        <input type="checkbox" id="check1">
+        <br><br>
+        <input type ="text" id ="n2" placeholder="0" disabled="disabled">
+        <input type="checkbox" id="check2">
+        <br><br>
+        <input type ="text" id ="n3" placeholder="0" disabled="disabled">
+        <input type="checkbox" id="check3">
+        <br><br>
+        <div>
+            <input class="opr" type ="button" value ="+" onclick="plus();">
+            <input class="opr" type ="button" value ="-" onclick="minus();">
+            <input class="opr" type ="button" value ="*" onclick="kali();">
+            <input class="opr" type ="button" value ="/" onclick="bagi();">
+        </div>
+        <br>
+        Hasil: <input class="hasil" type ="text" id = "result" placeholder=0><br><br>
+</body>
+</html>
+
+<style>
+    body{
+        margin-left: 20px;
+    }
+    .opr{
+        font-size: 20px;
+        width: 38px;
+        height: 38px;
+    }
+    .hasil{
+        text-align: right;
+        width: 115px;
+        border: none;
+    }
+</style>
+
